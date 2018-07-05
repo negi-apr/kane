@@ -49,7 +49,6 @@ test:
 #
 production:
   <<: *default
-  host: us-cdbr-iron-east-04.cleardb.net
   database: heroku_16ab67114a77300
   username: kane
   password: b183122205647e
