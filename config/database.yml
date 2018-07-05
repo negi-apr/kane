@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: kane_production
+  host: us-cdbr-iron-east-04.cleardb.net
+  database: heroku_16ab67114a77300
   username: kane
-  password: <%= ENV['KANE_DATABASE_PASSWORD'] %>
+  password: b183122205647e

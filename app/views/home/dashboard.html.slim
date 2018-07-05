@@ -12,3 +12,6 @@
     = link_to "グループリスト", list_group_index_path
   .col.s12
     = link_to "グループ作成", new_group_path
+  .col.s12
+    = link_to 'サインアウト', destroy_user_session_path, method: :delete
+
