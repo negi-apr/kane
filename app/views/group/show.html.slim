@@ -1,0 +1,17 @@
+.row
+  h5.col.s12.center = @group.name
+  span.col.s12.center = "招待コード：#{@group.code}"
+
+.row
+  ul.collection
+    = link_to "支払登録", new_group_payment_path(group_id: params[:id]), :class => 'collection-item'
+    = link_to "支払履歴", history_group_payment_index_path(group_id: params[:id]), :class => 'collection-item'
+
+
+.row
+  h6.col.s12 メンバーリスト
+  ul.collection
+    - @group_users.each do |group_user|
+      = link_to root_path, {:class => 'collection-item'} do
+        = group_user.user.name
+        span.badge.new.red data-badge-caption="円" -50,000

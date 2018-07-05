@@ -1,0 +1,7 @@
+.row
+  .col.s12.center
+    =  link_to image_tag('flogo.svg', {:width => '200', :border => 0, :alt => 'Facebookでログイン'}), user_facebook_omniauth_authorize_path
+
+  .col.s12.center
+    = link_to 'サインアウト', destroy_user_session_path, method: :delete
+

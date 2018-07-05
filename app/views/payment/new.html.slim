@@ -1,0 +1,28 @@
+.row
+  = form_for @payment, url: group_payment_index_path do |f|
+    .row
+      h6.col.s12  支払内容を入力してください
+      .input-field.col.s12
+        = f.text_field :description, placeholder: "（例）昼食代"
+        label for="description" 支払内容
+      .input-field.col.s12
+        = f.text_field :amount, placeholder: "1800"
+        label for="amount" 支払金額
+      .input-field.col.s12
+        = f.select :user_id, options_for_select(@group_users.pluck(:user_id).map{|u| [User.find(u).name, u]}), selected: current_user.id
+        label 支払ユーザー
+
+      = f.fields_for :transaction do |g|
+        h6.col.s12 精算対象者を選択してください
+        .col.s12
+          - @group_users.each do |group_user|
+            p
+              = g.check_box :to_id, { multiple: true, include_hidden: false }, checked_value = 
+
+        .col.s12
+          - @group_users.each do |group_user|
+            p
+              = g.check_box :to_ids, { multiple: true, checked: group_user[:checked], include_hidden: false, class: "filled-in" }, group_user.user_id, nil
+              label for="payment_transaction_to_ids_#{group_user.user_id}" #{group_user.user.name}
+      .input-field.col.s12.center
+        = f.submit '登録する', class: 'waves-effect waves-light btn center'

@@ -1,0 +1,8 @@
+.row
+  = form_for @group, url: group_index_path do |f|
+    h6.col.s12 新しくグループを作成します
+    .input-field.col.s12
+      = f.text_field :name
+      label for="name" グループ名
+    .input-field.col.s12.center
+      = f.submit '作成する', class: 'waves-effect waves-light btn center'

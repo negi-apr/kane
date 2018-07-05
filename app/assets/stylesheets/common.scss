@@ -1,0 +1,15 @@
+@charset "utf-8";
+@import "materialize";
+
+nav {
+  height: 40px;
+  line-height: 40px;
+  box-shadow: none;
+  margin-bottom: 20px;
+  @extend .pink, .lighten-2;
+  @extend .pink-text, .text-lighten-2;
+}
+
+.nav-wrapper a {
+  font-size: 1em;
+}
