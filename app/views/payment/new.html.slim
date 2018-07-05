@@ -14,10 +14,6 @@
 
       = f.fields_for :transaction do |g|
         h6.col.s12 精算対象者を選択してください
-        .col.s12
-          - @group_users.each do |group_user|
-            p
-              = g.check_box :to_id, { multiple: true, include_hidden: false }, checked_value = 
 
         .col.s12
           - @group_users.each do |group_user|

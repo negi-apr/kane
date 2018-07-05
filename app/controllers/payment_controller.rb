@@ -11,7 +11,6 @@ class PaymentController < ApplicationController
   def create
     @payment = Payment.new(payment_params)
     #@payment.transactions.build
-    binding.pry
 
 
   end
